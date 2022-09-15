@@ -1,0 +1,40 @@
+.container {
+    position:fixed;
+    padding:0;
+    margin:0;
+
+    top:0;
+    left:0;
+
+    width: 100%;
+    height: 100%;
+    }
+
+.mainTxt {
+    font-size: 1rem;
+    position: absolute;
+    text-align: center;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #B0AEAE;
+    
+    .subTxt{
+        font-size: 3rem;
+        font-family: 'Meddon';
+        color: rgba(255, 239, 98, 1)
+    }
+    .spacer{
+        padding-bottom: 2rem;
+    }
+    a:link {
+        color: rgb(234, 225, 139);
+    }
+    .BackBtn{
+        font-size: 1.2rem;
+        text-decoration: none;
+        &:hover{
+            text-decoration: underline;
+        }
+    }
+  }

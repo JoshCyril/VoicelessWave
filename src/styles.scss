@@ -1,1 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Meddon&family=Poppins:wght@100;300;400;600;700&display=swap');
+
+a { text-decoration: none; }
+input { border-style: none; background: transparent; outline: none; }
+button { padding: 0; background: none; border: none; outline: none; }
+
+
+body{
+    position: relative;
+    background-color: #2C2C2C;
+    font-family: 'Poppins';
+}

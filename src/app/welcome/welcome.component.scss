@@ -1,0 +1,95 @@
+.container {
+    position:fixed;
+    padding:0;
+    margin:0;
+
+    top:0;
+    left:0;
+
+    width: 100%;
+    height: 100%;
+    }
+
+.wlcTest {
+    font-size: 1rem;
+    position: absolute;
+    text-align: center;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #B0AEAE;
+    
+
+    .mainTxt{
+        font-size: 3rem;
+        // font-weight: bold;
+        font-family: 'Meddon';
+        color: rgba(255, 255, 255, 1);
+        .subTxt{
+            color: rgba(255, 239, 98, 1)
+        }
+    }
+    .spacer{
+        padding-bottom: 3rem;
+    }
+  }
+  
+  // colors
+$input-background: rgba(88, 84, 53, 0.314);
+$input-text-inactive: rgb(168, 156, 52);
+$input-text-active: rgb(216, 208, 138);
+
+// gradient animation
+@keyframes gradient { 
+  0%{background-position:0 0}
+  100%{background-position:100% 0}
+}
+
+.webflow-style-input {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  width: 88%;
+  max-width: 400px;
+  margin: 0 auto;
+  border-radius: 2px;
+  padding: 0.4rem 1rem 0.6rem;
+  background: $input-background;
+  &:after {
+    content: "";
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    z-index: 999;
+    height: 2px;
+    border-bottom-left-radius: 2px;
+    border-bottom-right-radius: 2px;
+    background-position: 0% 0%;
+    background: linear-gradient(to right, rgba(255, 239, 98, 1),  $input-background, $input-text-inactive, $input-text-active);
+    background-size: 500% auto;
+    animation: gradient 3s linear infinite;
+  }
+}
+
+.webflow-style-input input {
+  flex-grow: 1;
+  color: $input-text-active;
+  font-size: 1.2rem;
+  line-height: 1.5rem;
+  vertical-align: middle;
+  &::-webkit-input-placeholder {
+    color: $input-text-inactive;
+  }
+}
+
+.webflow-style-input button {
+  color:  $input-text-inactive;
+  font-size: 1.6rem;
+  line-height: 1.5rem;
+  vertical-align: middle;
+  transition: color .25s;
+  &:hover {
+    color: $input-text-active;
+  }
+}

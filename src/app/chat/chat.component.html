@@ -1,1 +1,38 @@
-<p>chat works!</p>
+<div class="container">
+
+    <div class="mainArea">
+
+        <div class ="chatArea">
+            <span class="chatType">Global Chat Room</span>
+            
+            <div class="displayChats">
+
+                <div class="chatDiv">
+                    <p>Beginning of the chatTxt</p>
+                </div>
+
+                <!-- ----------- NG FOR --------- -->   
+                <div class="chatCnt">
+                    <div class="chatTxt">
+                        <p innerHtml="">Hello World</p>
+                    </div>
+                    <div class="nameNdate">Test User 01 • 2 mins ago </div>
+                </div>
+
+                <!-- ----------- NG FOR --------- -->
+
+            </div>
+            
+        </div>
+
+        <div class ="typeArea">
+            <form [formGroup]="form" (ngSubmit)="submit()" >
+                <div class="webflow-style-input">
+                    <input class="nameTxt" type="text" placeholder="Just wave 👋" formControlName="username" maxlength="250">
+                    <button>✌</button>
+                    <button type="submit">➤</button>
+                </div>
+            </form>
+        </div>
+    </div> 
+</div>

@@ -1,0 +1,187 @@
+// colors
+$input-background: rgba(124, 122, 106, 0.647);
+$input-text-inactive: rgb(202, 189, 68);
+$input-text-active: rgb(241, 225, 73);
+
+.container {
+    position:fixed;
+    padding:0;
+    margin:0;
+
+    top:0;
+    left:0;
+
+    width: 100%;
+    height: 100%;
+    }
+
+.mainArea {
+    font-size: 1rem;
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #B0AEAE;
+    width: 92%;
+    height: 90%;
+    
+    
+    .chatArea{
+        // background-color: yellowgreen;
+        width: 100%;
+        height: 86%;
+        
+        display:block;
+        overflow-x: hidden;
+        overflow-y: scroll;
+        scroll-behavior: smooth;
+        border-radius: .6rem;
+
+        .chatType{
+            position: fixed;
+            top: 0.8rem;
+            right: 1.6rem;
+            padding: 5px 8px;
+            border-radius: .6rem;
+            background-color: whitesmoke;
+            color: black;
+            font-size: .8rem;
+            font-weight: bold;
+            z-index: 10;
+            border: rgba(255, 239, 98, 1) 2px solid;
+
+            box-shadow: 2px 2px 8px 2px rgba(0, 0, 0, 0.149);
+        }
+
+        .displayChats{
+            
+            color: black;
+
+            border-radius: .6rem;
+            background: rgba(217, 217, 217, 1);
+            
+
+            // height: 100%;
+            min-height: 100%;
+            width: 100%;
+            
+            display: flex;
+            flex-direction: column;
+            justify-content: end;
+            align-items:start;
+
+            // overflow:hidden;
+
+            .chatDiv{
+                display: block;
+                font-size: 0.6rem;
+                color: #707070;
+                text-align: center;
+                width: 100%;
+                // &::before{
+                //     content: "⎯⎯⎯⎯⎯⌾⎯⎯⎯⎯⎯";
+                // }
+                &::After{
+                    content: "⎯⎯⎯⎯⎯ ⌾⎯⎯⎯⎯⎯";
+                }
+            }
+            .chatCnt {
+                // overflow:hidden;
+                overflow-wrap: break-word;
+                
+                margin: 10px;
+                max-width: 80vw;
+                height: auto;
+                width: auto;
+                
+                .chatTxt{
+                    box-shadow: 2px 2px 8px 2px rgba(0, 0, 0, 0.149);
+                    background-color:  whitesmoke;
+                    border-radius: .6rem .6rem .6rem 0px;
+                    padding: 12px;
+                    margin: 0px;
+                    font-size: 1rem;
+                    font-weight: 400;
+                    // inline-size: 80vw;
+                    max-width: 80vw;
+                    overflow-wrap: break-word;
+                    p{
+                        margin: 0px;
+                    }
+                }
+                .nameNdate{
+                    padding: 5px 12px;
+                    font-size: .6rem;
+                    font-weight: 600;
+                }
+              }
+        }
+    }
+
+    .typeArea{
+        padding-top: 2vh;
+        // background-color: yellowgreen;
+        width: 100%;
+        height: 10%;
+        border-radius: .6rem;
+    }
+
+    
+  }
+
+// gradient animation
+@keyframes gradient { 
+  0%{background-position:0 0}
+  100%{background-position:100% 0}
+}
+
+.webflow-style-input {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  width: 92%;
+  margin: 0 auto;
+  border-radius: .6rem;
+  padding: 0.4rem 1rem 0.6rem;
+  background: $input-background;
+  &:after {
+    content: "";
+    position: absolute;
+    left: 1%;
+    right: 0px;
+    bottom: 0px;
+    z-index: 999;
+    height: 3px;
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+    background-position: 0% 0%;
+    width: 98%;
+    background: linear-gradient(to right, rgba(255, 239, 98, 1),  $input-background, $input-text-inactive, $input-text-active);
+    background-size: 500% auto;
+    animation: gradient 3s linear infinite;
+  }
+}
+
+.webflow-style-input input {
+  flex-grow: 1;
+  color: $input-text-active;
+  font-size: 1.2rem;
+  line-height: 1.5rem;
+  vertical-align: middle;
+  &::-webkit-input-placeholder {
+    color: $input-text-inactive;
+  }
+}
+
+.webflow-style-input button {
+  color:  $input-text-inactive;
+  font-size: 1.6rem;
+  line-height: 1.5rem;
+  padding-left: 5%;
+  vertical-align: middle;
+  transition: color .25s;
+  &:hover {
+    color: $input-text-active;
+  }
+}

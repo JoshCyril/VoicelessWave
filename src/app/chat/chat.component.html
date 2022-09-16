@@ -3,7 +3,12 @@
     <div class="mainArea">
 
         <div class ="chatArea">
-            <span class="chatType">Global Chat Room</span>
+            <span class="chatType">
+                [Global] Chatting
+                <p class ="usName">
+                    As <span class ="mnName">{{name}}</span> 
+                </p>
+            </span>
             
             <div class="displayChats">
 
@@ -21,6 +26,13 @@
 
                 <!-- ----------- NG FOR --------- -->
 
+                <div class="chatCnt">
+                    <div class="chatTxt">
+                        <p innerHtml="">😂</p>
+                    </div>
+                    <div class="nameNdate">Test User 01 • 2 mins ago </div>
+                </div>
+
             </div>
             
         </div>
@@ -28,8 +40,8 @@
         <div class ="typeArea">
             <form [formGroup]="form" (ngSubmit)="submit()" >
                 <div class="webflow-style-input">
-                    <input class="nameTxt" type="text" placeholder="Just wave 👋" formControlName="username" maxlength="250">
-                    <button>✌</button>
+                    <input class="nameTxt" type="text" placeholder="Just wave 👋" formControlName="chatMsg" maxlength="250">
+                    <button (click)="addWave()">✌</button>
                     <button type="submit">➤</button>
                 </div>
             </form>

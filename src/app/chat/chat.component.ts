@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef, HostListener } from '@angular/core';
 import { FormGroup, FormControl, Validators} from '@angular/forms';
 import {Router} from '@angular/router';
 
@@ -8,9 +8,11 @@ import {Router} from '@angular/router';
   styleUrls: ['./chat.component.scss']
 })
 export class ChatComponent implements OnInit {
+  newChatMsg: string|any;
+  name: string|any;
 
   form = new FormGroup({
-    username: new FormControl('', Validators.required)
+    chatMsg: new FormControl('', Validators.required)
   });
 
   get f(){
@@ -21,13 +23,35 @@ export class ChatComponent implements OnInit {
   constructor(private router: Router) { }
 
   ngOnInit(): void {
-    if (localStorage.getItem('uname') == ""){
+    this.name = localStorage.getItem('uname')
+    if (this.name == ""){
       this.router.navigate(['/welcome']);
     }
 
   }
 
   submit(){
-
+    if (this.form.value.chatMsg !== ""){
+      console.log("Message Sent!")
+    }
   }
+
+  addWave(){
+    
+    this.newChatMsg = "👋 from [" + this.name +"]"
+    
+    this.form = new FormGroup({
+      chatMsg: new FormControl(this.newChatMsg),
+    });
+    
+  }
+
+  // @HostListener('window:keyup', ['$event'])
+  // keyEvent(event: KeyboardEvent) {
+
+  //   if (event.key === 'Enter') {
+  //     this.submit();
+  //   }
+  // }
+    
 }

@@ -40,6 +40,7 @@ $input-text-active: rgb(241, 225, 73);
 
         .chatType{
             position: fixed;
+            text-align: right;
             top: 0.8rem;
             right: 1.6rem;
             padding: 5px 8px;
@@ -52,6 +53,19 @@ $input-text-active: rgb(241, 225, 73);
             border: rgba(255, 239, 98, 1) 2px solid;
 
             box-shadow: 2px 2px 8px 2px rgba(0, 0, 0, 0.149);
+            p{
+              margin: 0px;
+            }
+            .usName{
+              text-align: right;
+              font-size: 0.6rem;
+              color: #707070;
+
+              .mnName{
+                color: #2b2b2b;
+                font-weight: 700;
+              }
+            }
         }
 
         .displayChats{

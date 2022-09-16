@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef,HostListener } from '@angular/core';
 import { FormGroup, FormControl, Validators} from '@angular/forms';
 import {Router} from '@angular/router';
 
@@ -39,4 +39,13 @@ export class WelcomeComponent implements OnInit {
 
     this.router.navigate(['/chat']);
   }
+
+  @HostListener('window:keyup', ['$event'])
+  keyEvent(event: KeyboardEvent) {
+
+    if (event.key === 'Enter') {
+      this.submit();
+    }
+  }
+
 }

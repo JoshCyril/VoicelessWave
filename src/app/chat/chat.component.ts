@@ -8,6 +8,7 @@ import {Router} from '@angular/router';
   styleUrls: ['./chat.component.scss']
 })
 export class ChatComponent implements OnInit {
+
   newChatMsg: string|any;
   name: string|any;
 
@@ -32,6 +33,7 @@ export class ChatComponent implements OnInit {
 
   submit(){
     if (this.form.value.chatMsg !== ""){
+      // this.socket.emit('new message', this.form.value.chatMsg);
       console.log("Message Sent!")
     }
   }
@@ -46,6 +48,10 @@ export class ChatComponent implements OnInit {
     
   }
 
+
+  }
+
+
   // @HostListener('window:keyup', ['$event'])
   // keyEvent(event: KeyboardEvent) {
 
@@ -54,4 +60,3 @@ export class ChatComponent implements OnInit {
   //   }
   // }
     
-}

@@ -2,10 +2,12 @@
     <div class="wlcTest">Welcome to<div class ="mainTxt">Voiceless<span class ="subTxt">Wave</span></div>
         <div class="spacer"></div>
 
-        <div class="webflow-style-input">
-            <input class="nameTxt" type="text" placeholder="Type your name">
-            <button type="submit">🡪</button>
-          </div>
+        <form [formGroup]="form" (ngSubmit)="submit()" >
+            <div class="webflow-style-input">
+                <input class="nameTxt" type="text" placeholder="Type your name" formControlName="username" maxlength="25">
+                <button type="submit">🡪</button>
+            </div>
+        </form>
 
     </div>
 </div>
